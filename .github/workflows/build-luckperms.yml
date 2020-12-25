@@ -29,6 +29,9 @@ jobs:
 
     - name: Install Git
       run: sudo apt-get install git
+
+    - name: Check Git
+      run: git --version
     
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
