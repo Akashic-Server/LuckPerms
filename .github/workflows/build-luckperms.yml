@@ -35,10 +35,32 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Setup Debug Session
-      uses: P3TERX/debugger-action@main
+    - uses: actions/upload-artifact@v2
+      with:
+        name: LuckPerms-Bukkit.jar
+        path: bukkit/build/libs/LuckPerms*.jar
 
     - uses: actions/upload-artifact@v2
       with:
-        name: LuckPerms
-        path: build/libs
+        name: LuckPerms-BungeeCord.jar
+        path: bungee/build/libs/LuckPerms*.jar
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: LuckPerms-Sponge.jar
+        path: sponge/build/libs/LuckPerms*.jar
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: LuckPerms-Nukkit.jar
+        path: nukkit/build/libs/LuckPerms*.jar
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: LuckPerms-Velocity.jar
+        path: velocity/build/libs/LuckPerms*.jar
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: LuckPerms-BukkitLegacy.jar
+        path: bukkit-legacy/build/libs/LuckPerms*.jar
