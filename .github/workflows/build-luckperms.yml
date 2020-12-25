@@ -18,6 +18,8 @@ jobs:
     steps:
     
     - uses: actions/checkout@v2
+      with:  
+        fetch-depth: '0'
 
     - name: Set time zone
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
@@ -26,9 +28,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-
-    - name: test
-      run: ls -a && git describe --tag
     
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
