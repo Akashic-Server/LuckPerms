@@ -23,32 +23,28 @@
  *  SOFTWARE.
  */
 
-package net.luckperms.api.event.cause;
+package net.luckperms.api.event.user;
+
+import net.luckperms.api.event.LuckPermsEvent;
+import net.luckperms.api.event.type.Cancellable;
+import net.luckperms.api.event.util.Param;
+import net.luckperms.api.model.user.User;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * The cause of a group/track deletion
+ * Called when a user is about to be unloaded from memory.
+ *
+ * @since 5.3
  */
-public enum DeletionCause {
+public interface UserUnloadEvent extends LuckPermsEvent, Cancellable {
 
     /**
-     * The deletion was caused by a command
+     * Gets the user that is being unloaded
+     *
+     * @return the user that is being unloaded
      */
-    COMMAND,
-
-    /**
-     * The deletion was caused by the web editor
-     * @since 5.3
-     */
-    WEB_EDITOR,
-
-    /**
-     * The deletion was caused by an API call
-     */
-    API,
-
-    /**
-     * The deletion was caused by a LuckPerms internal
-     */
-    INTERNAL
+    @Param(0)
+    @NonNull User getUser();
 
 }
