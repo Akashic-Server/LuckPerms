@@ -23,33 +23,8 @@
  *  SOFTWARE.
  */
 
-package net.luckperms.api.node;
-
-import net.luckperms.api.model.PermissionHolder;
-
-import org.checkerframework.checker.nullness.qual.NonNull;
-
 /**
- * A relationship between a {@link PermissionHolder} and a {@link Node}.
- *
- * @param <T> the identifier type of the holder
- * @deprecated The only usages of this interface are also deprecated.
+ * Context functionality, including {@link net.luckperms.api.context.ContextSet}s and
+ * {@link net.luckperms.api.context.ContextCalculator}s.
  */
-@Deprecated
-public interface HeldNode<T> {
-
-    /**
-     * Gets the holder of the node
-     *
-     * @return the holder
-     */
-    @NonNull T getHolder();
-
-    /**
-     * Gets the node
-     *
-     * @return the node
-     */
-    @NonNull Node getNode();
-
-}
+package net.luckperms.api.context;
